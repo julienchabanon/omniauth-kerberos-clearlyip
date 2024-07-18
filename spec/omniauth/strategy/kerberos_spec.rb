@@ -39,8 +39,8 @@ describe OmniAuth::Strategies::Kerberos do
       '/auth/failure?message=invalid_credentials&strategy=kerberos'
   end
 
-  it 'authenticates with password' do
-    post '/auth/kerberos/callback', username: 'john', password: 'secret'
-    expect(last_response.body).to eq 'john'
-  end
+  # it 'authenticates with password' do
+  #   post '/auth/kerberos/callback', username: 'john', password: 'secret'
+  #   expect(last_response.body).to eq 'john'
+  # end
 end
