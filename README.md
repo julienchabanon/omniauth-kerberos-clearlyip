@@ -55,10 +55,6 @@ end
 
 ## Options
 
-** title **
-The title text shown on default login form.
-(default: `"Restricted Access"`)
-
 ** fields **
 The request parameter names to fetch username and password.
 (default: `[ "username", "password" ]`)
