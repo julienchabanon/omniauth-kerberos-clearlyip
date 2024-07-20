@@ -5,7 +5,8 @@
 [![Test Coverage](https://codeclimate.com/github/jgraichen/omniauth-kerberos/badges/coverage.svg)](https://codeclimate.com/github/jgraichen/omniauth-kerberos/coverage)
 
 **omniauth-kerberos** is a simple [OmniAuth](https://github.com/intridea/omniauth) strategy to authenticate using a Kerberos server. This gem require omniauth 2.0 or above.
-This is a fork of [omniauth-kerberos](https://github.com/jgraichen/omniauth-kerberos) that is compatible with omniauth 2.0. If you need to use omniauth 1.X, please use [omniauth-kerberos](https://github.com/jgraichen/omniauth-kerberos).
+
+This is a fork of [omniauth-kerberos](https://github.com/jgraichen/omniauth-kerberos) that is compatible with omniauth 2.0. If your app require omniauth 1.X for some reasons, please use [omniauth-kerberos](https://github.com/jgraichen/omniauth-kerberos).
 I also removed the dependency and the use of [omniauth-multipassword](https://github.com/jgraichen/omniauth-multipassword).
 
 
