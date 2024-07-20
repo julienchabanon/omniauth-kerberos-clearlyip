@@ -14,7 +14,7 @@ I also removed the dependency and the use of [omniauth-multipassword](https://gi
 
 Add this line to your application's Gemfile:
 
-    gem 'omniauth-kerberos'
+    gem 'omniauth-kerberos-clearlyip'
 
 And then execute:
 
@@ -22,7 +22,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install omniauth-kerberos
+    $ gem install omniauth-kerberos-clearlyip
 
 Kerberos development headers are required to build dependencies.
 
@@ -30,6 +30,9 @@ On Debian try:
 
 	$ sudo apt-get install libkrb5-dev
 
+ On Arch try:
+ 
+	$ sudo pacman -S krb5
 
 ## Usage
 
