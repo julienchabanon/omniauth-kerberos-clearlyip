@@ -1,41 +1,36 @@
 # omniauth-kerberos2/lib/omniauth/strategies/kerberos.rb
 require 'omniauth'
 require 'krb5_auth'
-require 'omniauth/multipassword/base'
 
 module OmniAuth
   module Strategies
     class Kerberos
       include OmniAuth::Strategy
-      # include OmniAuth::MultiPassword::Base
 
+      option :title,  "Kerberos Authentication @#{::Krb5Auth::Krb5.new.get_default_realm.downcase}"
       option :name, 'kerberos'
       option :fields, %i[username password]
+      uid { username }
 
       def initialize(app, *args, &block)
         super
         @krb5 = ::Krb5Auth::Krb5.new
       end
 
-      def self.included(base)
-        base.class_eval do
-          option :title,  'Restricted Access'
-          option :fields, %i[username password]
-
-          uid { username }
-        end
-      end
-
       def username_id
-        options[:fields][0] || 'username'
+        options[:fields][0]&.to_s || 'username'
       end
 
       def password_id
-        options[:fields][1] || 'password'
+        options[:fields][1]&.to_s || 'password'
       end
 
       def username
-        @username || request&.params['username']&.to_s
+        @username || request&.params[username_id]&.to_s
+      end
+
+      def password
+        request&.params[password_id]
       end
 
       def init_authenticator(request, env, username)
@@ -45,7 +40,7 @@ module OmniAuth
       end
 
       def callback_phase
-        if authenticate(username, request&.params['password'])
+        if authenticate(username, password)
           super
         else
           fail!(:invalid_credentials)
@@ -69,15 +64,15 @@ module OmniAuth
       end
 
       info do
-        { username: username,
-          email: username + '@' + @krb5.get_default_realm.downcase }
+        { 
+          username: username,
+          email: "#{username}@#{@krb5.get_default_realm.downcase}"
+        }
       end
 
       private
 
       def authenticate(username, password)
-        p username
-        p password
         @krb5.get_init_creds_password(username, password)
         true
       rescue ::Krb5Auth::Krb5::Exception
