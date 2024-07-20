@@ -4,7 +4,8 @@
 [![Code Climate](https://codeclimate.com/github/jgraichen/omniauth-kerberos/badges/gpa.svg)](https://codeclimate.com/github/jgraichen/omniauth-kerberos)
 [![Test Coverage](https://codeclimate.com/github/jgraichen/omniauth-kerberos/badges/coverage.svg)](https://codeclimate.com/github/jgraichen/omniauth-kerberos/coverage)
 
-**omniauth-kerberos** is a simple [OmniAuth](https://github.com/intridea/omniauth) strategy to authenticate using a Kerberos server. **omniauth-kerberos** can be used as an authenticator for [OmniAuth MultiPassword](https://github.com/jgraichen/omniauth-multipassword).
+**omniauth-kerberos** is a simple [OmniAuth](https://github.com/intridea/omniauth) strategy to authenticate using a Kerberos server. This gem require omniauth 2.0 or above.
+This is a fork of [omniauth-kerberos](https://github.com/jgraichen/omniauth-kerberos) that is compatible with omniauth 2.0. I also removed the dependency on [omniauth-multipassword](https://github.com/jgraichen/omniauth-multipassword).
 
 
 ## Installation
@@ -62,4 +63,4 @@ The request parameter names to fetch username and password.
 
 [MIT License](http://www.opensource.org/licenses/mit-license.php)
 
-Copyright (c) 2012, Jan Graichen
+Copyright (c) 2024, Julien Chabanon
