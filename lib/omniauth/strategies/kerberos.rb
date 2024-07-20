@@ -26,17 +26,11 @@ module OmniAuth
       end
 
       def username
-        @username || request&.params[username_id]&.to_s
+        request&.params[username_id]
       end
 
       def password
         request&.params[password_id]
-      end
-
-      def init_authenticator(request, env, username)
-        @request  = request
-        @env      = env
-        @username = username
       end
 
       def callback_phase
@@ -81,5 +75,3 @@ module OmniAuth
     end
   end
 end
-
-OmniAuth.config.add_camelization 'kerberos', 'Kerberos'

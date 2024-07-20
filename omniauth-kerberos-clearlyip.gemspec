@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.name          = 'omniauth-kerberos-clearlyip'
   gem.require_paths = ['lib']
-  gem.version       = '0.1.0'
+  gem.version       = '0.1.1'
   gem.required_ruby_version = '>= 2.5.0'
 
   gem.add_dependency 'omniauth', '~> 2.0'
