@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in omniauth-kerberos.gemspec
+# Specify your gem's dependencies in omniauth-kerberos-clearly.gemspec
 gemspec
 
 gem 'codeclimate-test-reporter', '~> 1.0'
