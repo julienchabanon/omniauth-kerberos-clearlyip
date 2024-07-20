@@ -55,6 +55,10 @@ end
 
 ## Options
 
+** title **
+The title text shown on the login form.
+(default: `Kerberos Authentication @example.com`)
+
 ** fields **
 The request parameter names to fetch username and password.
 (default: `[ "username", "password" ]`)
