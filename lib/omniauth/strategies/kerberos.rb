@@ -7,7 +7,7 @@ module OmniAuth
     class Kerberos
       include OmniAuth::Strategy
 
-      option :title,  "Kerberos Authentication @#{::Krb5Auth::Krb5.new.get_default_realm.downcase}"
+      option :title,  "Kerberos Authentication @#{::Krb5Auth::Krb5.new.get_default_realm.downcase rescue ''}"
       option :name, 'kerberos'
       option :fields, %i[username password]
       uid { username }
