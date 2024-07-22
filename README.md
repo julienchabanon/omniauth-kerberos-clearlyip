@@ -2,8 +2,8 @@
 
 **omniauth-kerberos** is a simple [OmniAuth](https://github.com/intridea/omniauth) strategy to authenticate using a Kerberos server. This gem require omniauth 2.0 or above.
 
-This is a fork of [omniauth-kerberos](https://github.com/jgraichen/omniauth-kerberos) that is compatible with omniauth 2.0. If your app require omniauth 1.X for some reasons, please use [omniauth-kerberos](https://github.com/jgraichen/omniauth-kerberos).
-I also removed the dependency and the use of [omniauth-multipassword](https://github.com/jgraichen/omniauth-multipassword).
+This is a fork of [omniauth-kerberos](https://github.com/jgraichen/omniauth-kerberos) that is not using [omniauth-multipassword](https://github.com/jgraichen/omniauth-multipassword) as a dependency.
+Also, the default form title has been changed to expose the krb realm.
 
 
 ## Installation
